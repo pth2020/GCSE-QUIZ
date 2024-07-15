@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="aboutus-container">
+    <div>
+        <p><h3>Quizzes - Feedback</h3></p>
+    </div>
+    <div>
+        <table border="1" width="100%">
+            <tr>
+                <th>Date/Time</th>
+                <th>Topic</th>           
+                <th>Mark</th>
+                <th>Percentage</th>
+            </tr>
+            {% for q in quizzes %}
+            <tr>
+                <td>{{q.quiz_date}}</td>
+                <td>{{q.subtopic}}</td>
+                <td>{{q.mark}}/{{q.total_number_of_questions}}</td>
+                <td>{{q.result_percentage}}%</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <div>
+            <br>
+            <h2>Feedback</h2>
+            {% for q in questions %}
+            <div class="card">
+                <div>
+                    {{forloop.counter}}) {{q.question}}
+                </div>
+            <div class="option">
+                <input type="radio" id={{q.option1}} name={{q.question_id}} value={{q.option1}} disabled>
+                <label for={{q.option1}}> {{q.option1}}</label>
+            </div>
+            <div class="option">
+                <input type="radio" id={{q.option2}} name={{q.question_id}} value={{q.option2}} disabled>
+                <label for={{q.option2}}> {{q.option2}}</label>                                       
+            </div>
+            <div class="option">
+                <input type="radio" id={{q.option3}} name={{q.question_id}} value={{q.option3}} disabled>
+                <label for={{q.option3}}> {{q.option3}}</label>
+            </div>
+            <div class="option">
+                <input type="radio" id={{q.option4}} name={{q.question_id}} value={{q.option4}} disabled>
+                <label for={{q.option4}}>{{q.option4}}</label>
+            </div>
+            <div><p>Answer: {{q.answer}}</p></div>
+            {% endfor %}
+            <br>
+        </div> 
+    </div>  
+
+
+{% endblock content %}
+

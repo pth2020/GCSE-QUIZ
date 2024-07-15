@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="area-of-study">
+    <div class="area-of-study-container">
+        <div class="area-of-study-grid">
+            <div class="card">                    
+                <a href="http://127.0.0.1:8000/quiz/1/">Number</a>
+            </div>
+            <div class="card">
+                <a href="http://127.0.0.1:8000/quiz/2/">Algebra</a>
+            </div>
+            <div class="card">
+                <a href="http://127.0.0.1:8000/quiz/3/">Ratio and Proportion</a>
+            </div>
+            <div class="card">
+                <a href="http://127.0.0.1:8000/quiz/4/">Geometry and Measure</a>
+            </div>
+            <div class="card">
+                <a href="http://127.0.0.1:8000/quiz/5/">Probability and Statistics</a>
+            </div>    
+        </div>
+    </div>
+</section>
+<section>
+
+    <section class="image-and-sidebar">
+        <div class="container">
+            <div class="image-sidebar-grid">
+                <div class="card">
+                    <img src="/static/images/maths.png" alt="#">
+                </div>
+                <div class="card">
+                    <p class="heading"> <h3>How to navigate the QUIZ</h3></p>
+                    <p class="quiz-nav">
+                        <ul>
+                            <li>* Select a topic to list down all available sub-topics</li>
+                            <li>* Select a sub-topic to open the quiz</li>
+                            <li>* Complete the quiz and submit</li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

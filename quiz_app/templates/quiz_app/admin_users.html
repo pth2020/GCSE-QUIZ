@@ -1,0 +1,37 @@
+{% extends 'base-admin.html' %}
+
+{% block content %}
+<div class="admin-area">
+
+    <h2>Admin - users</h2>
+    
+    <form action="http://127.0.0.1:8000/user-add-form/" method="Post">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <th colspan="2">Email</th>
+                <th>Username</th>
+                <th>Password</th>
+                <th colspan="2">Action</th>
+            </tr>
+            {% for studs in students %}
+            <tr>
+                <td colspan="2">{{studs.email}}</td>
+                <td>{{studs.username}}</td>
+                <td>********</td>
+                <td><a href="http://127.0.0.1:8000/user-update-form/{{studs.student_id}}/">Edit</a></td>
+                <td><a href="http://127.0.0.1:8000/user-delete/{{studs.student_id}}/">Delete</a></td>    
+            </tr>        
+            {% endfor %}
+            
+        </table>
+        <div>
+            <button class="add-user">Add User</button>
+        </div>
+    </form>
+    
+    <script>
+    
+    </script>
+    
+    {% endblock content %}

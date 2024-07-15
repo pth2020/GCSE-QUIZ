@@ -1,0 +1,26 @@
+{% extends 'base-admin.html' %}
+
+{% block content %}
+
+<div class="admin-area">
+    <h2>Add/Edit - Subtopic</h2>
+
+    <form method="post" action="http://127.0.0.1:8000/subtopic-update/{{update_subtopic.sub_topic_id}}/" enctype="multipart/form-data" >
+        {% csrf_token %}
+
+        <div class="add-edit-topics-input">
+            <select class ="select" name="topic">
+                {% for t in topics %}
+                <option value={{t.topic_id}} >{{ t.topic }}</option>
+                {% endfor %}
+            </select>
+            <input type="text" name="subtopic" value = "{{update_subtopic.sub_topic}}">   
+        </div>
+        <div class="btn-field">
+            <button type="submit" class="add-user">Update Subtopic</buton>
+        </div>               
+    </form>
+
+</div>
+
+{% endblock content %}

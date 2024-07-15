@@ -1,0 +1,71 @@
+{% extends 'base-admin.html' %}
+
+{% block content %}
+
+<div class="admin-area">
+
+<h2>Admin - Report</h2>
+
+    <table>
+        <tr>
+            <td>
+                <table>
+                    <tr>
+                        <th>Admin</th>
+                        <th>Users (incl. Admin)</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>{{students}}</td>
+                    </tr>                
+                </table>
+            </td>
+            <td>
+                <table>
+                    <tr>
+                        <th>Topics</th>
+                        <th>Sub-Topics</th>
+                    </tr>
+                    <tr>
+                        <td>{{topics}}</td>
+                        <td>{{subtopics}}</td>
+                    </tr>
+                </table>
+            </td>
+            <td>
+                <table>
+                    <tr>
+                        <th>User Quizzes</th>
+                    </tr>
+                    <tr>
+                        <td>{{quizzes}}</td>
+                    </tr>
+                
+                </table>
+            </td>            
+        </tr>
+    </table> 
+
+    <table>
+
+        <tr>
+            <th>Questions</th>
+            <th>Number</th>
+            <th>Algebra</th>
+            <th>Ratio & Proportion</th>
+            <th>Geometry & Measurement</th>
+            <th>Probability & Staistics</th>
+
+        </tr>
+        <tr>
+            <td>{{questions}}</td>
+            <td>{{subtopic_number}}</td>
+            <td>{{subtopic_algebra}}</td>
+            <td>{{subtopic_ratio_and_proportion}}</td>
+            <td>{{subtopic_geometry_and_measurement}}</td>
+            <td>{{subtopic_probability_and_statistics}}</td>
+        </tr>
+    
+    </table>
+    </div>
+{% endblock content %}

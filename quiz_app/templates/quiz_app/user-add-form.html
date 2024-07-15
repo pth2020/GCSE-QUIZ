@@ -1,0 +1,31 @@
+{% extends 'base-admin.html' %}
+
+{% block content %}
+
+<div class="admin-area">
+    <h2>Add/Edit - User</h2>
+
+    <form method="post" action="http://127.0.0.1:8000/save-user/" name="user-form" enctype="multipart/form-data" >
+        {% csrf_token %}
+        <div class="add-edit-user-input">
+            <div class="input-field" >
+                <input type="email" name="email" placeholder="Email">
+            </div>
+            <div class="input-field" id="nameField">
+                <input type="text" name="username" placeholder="Username">
+            </div>
+
+            <div class="input-field">
+                <input type="password" name="password" placeholder="Password">
+            </div>
+            <p>
+
+            <div class="btn-field">
+                <button type="submit" class="add-user">Save User</button>
+            </div>
+        </div>
+    </form>
+   
+</div>
+
+{% endblock content %}

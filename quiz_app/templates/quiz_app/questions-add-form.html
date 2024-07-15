@@ -1,0 +1,29 @@
+{% extends 'base-admin.html' %}
+
+{% block content %}
+
+<div class="admin-area">
+    <h2>Add/Edit - Question</h2>
+
+    <form method="post" action="http://127.0.0.1:8000/admin-add-question/">
+        {% csrf_token %}
+        <div class="add-edit-topics-input">
+            <input type="text" name="question" placeholder="Question" required><p>
+            <input type="text" name="option 1" placeholder="Option 1" required><p>
+            <input type="text" name="option 2" placeholder="Option 2" required><p>
+            <input type="text" name="option 3" placeholder="Option 3" required><p>
+            <input type="text" name="option 4" placeholder="Option 4" required><p>
+            <input type="text" name="answer" placeholder="Answer" required><p>
+            <select class ="select" name="subtopic"><p>
+                {% for t in subtopics %}
+                <option value={{t.sub_topic_id}} >{{ t.sub_topic }}</option>
+                {% endfor %}
+            </select>
+
+            <p><button type="submit" class="add-question">Add Question</button></div>
+        </div>
+
+    </form> 
+</div>
+
+{% endblock content %}

@@ -1,0 +1,40 @@
+{% extends 'base-admin.html' %}
+
+{% block content %}
+
+<div class="admin-area">
+
+<h2>Admin - Questions</h2>
+
+<form action="http://127.0.0.1:8000/question-add-form/" method="Post">
+    {% csrf_token %}
+    <table>
+        <tr>
+            <th colspan="2">Question</th>
+            <th>Options</th>
+            <th>Answer</th>
+            <th>Subtopic</th>
+            <th colspan="2">Action</th>
+        </tr>
+        {% for q in admin_questions %}
+        <tr>
+            <td colspan="2"> {{forloop.counter}}) {{q.question}}</td>
+            <td>a) {{q.option1}}<p>
+                b) {{q.option2}}<p>
+                c) {{q.option3}}<p>
+                d) {{q.option4}}
+            </td>
+            <td>{{q.answer}}</td>
+            <td>{{q.subtopic}}</td>
+            <td><a href="http://127.0.0.1:8000/question-update-form/{{q.question_id}}/">Edit</a></td>
+            <td><a href="http://127.0.0.1:8000/question-delete/{{q.question_id}}/">Delete</a></td>
+
+        </tr>
+        {% endfor %}
+    </table>
+    <button class="add-question">Add Question</button>
+</form>
+
+
+
+{% endblock content %}

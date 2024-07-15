@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    <link 
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel = "stylesheet"/>
+    <script src="https://kit.fontawesome.com/d6583894e6.js" crossorigin="anonymous"></script>
+
+    <title>GCSE maths quiz</title>
+
+    <link rel="stylesheet" href="{% static 'css/style_admin.css' %}">    
+
+
+    <link rel="shortcut icon" href="static/images/favicon.ico" type="image/x-icon" />
+
+    <body>
+        <div class="side-nav">
+            <div id="settings-logo">
+                <p><img src="/static/images/admin.png" class= "settings-img" alt="settings"></p>
+            </div>
+            <hr>
+            <ul class="nav-links">
+                <li><a href="http://127.0.0.1:8000/admin-home/"><i class="fa-solid fa-house-user"></i><p>Home</p></a></li>
+                <li></i><a href="http://127.0.0.1:8000/admin-users/"><i class="fa-solid fa-users"></i><p>Users</p></a></li>
+                <li></i><a href="http://127.0.0.1:8000/admin-topics/"><i class="fa-solid fa-list"></i><p>Topics</p></a></li>
+                <li></i><a href="http://127.0.0.1:8000/admin-questions/"><i class="fa-solid fa-question"></i><p>Questions</p></a></li>
+                <li></i><a href="http://127.0.0.1:8000/admin-stats/"><i class="fa-solid fa-table-list"></i><p>Statistics</p></a></li>
+                <li></i><a href="http://127.0.0.1:8000/signout/"><i class="fa-solid fa-right-from-bracket"></i><p>Log out</p></a></li> 
+                <div class="active"></div>
+            </ul>
+        </div>
+        {% block content %}
+
+        
+        {% endblock %}
+        
+    </body>
+</html>

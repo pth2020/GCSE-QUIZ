@@ -1,0 +1,35 @@
+{% extends 'base-admin.html' %}
+
+{% block content %}
+
+<div class="admin-area">
+
+<h2>Admin - Topics</h2>
+
+<form method="Post" action="http://127.0.0.1:8000/subtopic-add-form/">
+    {% csrf_token %}
+    <table>
+        <tr>
+            <th >Topic</th>
+            <th>Sub-topic</th>
+            <th colspan="2">Action</th>
+        </tr>
+        {% for t in admin_sub_top %}
+        <tr>            
+            <td>{{t.topic}}</td>
+            <td>{{t.sub_topic}}</td>
+            <td><a href="http://127.0.0.1:8000/subtopic-update-form/{{t.sub_topic_id}}/">Edit</a></td>
+            <td><a href="http://127.0.0.1:8000/subtopic-delete/{{t.sub_topic_id}}/">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <div>
+        <button class="add-topic">Add Topic</button>
+    </div>
+
+</form>
+
+
+
+{% endblock content %}

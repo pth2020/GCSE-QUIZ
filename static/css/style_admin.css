@@ -1,0 +1,194 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+.side-nav {
+    width: 250px;
+    height: 100%;
+    background: #0d74f5;
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* 20px from bottom 30px from left and right  */
+    padding: 20px 30px;
+}
+
+.settings-logo {
+    border: 2px solid #fff;
+    padding: 10px;
+    border-radius: 50px 20px;
+}
+
+.nav-links {
+    list-style: none;
+    position: relative;
+
+}
+
+#img {
+    margin-right: 18px;
+}
+
+.nav-links li {
+    padding:  10px 0;
+}
+
+.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 5px;
+    display: flex;
+    align-items: center;
+}
+
+.nav-links li a i {
+    font-size: 22px;
+    margin-right: 20px;
+    padding: 5px;
+}
+
+.active {
+    background: #fff;
+    width: 100%;
+    height: 47px;
+    position: absolute;
+    left: 0;
+    top: 2.6%;
+    z-index: -1;
+    border-radius: 6px;
+    box-shadow: 0 5px 10px rgba(255, 255, 255, 0.4);
+    display: none;
+    transition: top 0.5s;
+}
+
+.nav-links li:hover a {
+    color: #0d74f5;
+    transition: 0.3s;
+}
+
+.nav-links li:hover ~ .active {
+    display: block;
+}
+
+.nav-links li:hover ~ .active {
+    display: block;
+}
+
+.nav-links li:nth-child(1):hover ~ .active {
+    top: 2.6%
+}
+
+.nav-links li:nth-child(2):hover ~ .active {
+    top: 19.2%
+}
+
+.nav-links li:nth-child(3):hover ~ .active {
+    top: 35.8%
+}
+
+.nav-links li:nth-child(4):hover ~ .active {
+    top: 52.4%
+}
+
+.nav-links li:nth-child(5):hover ~ .active {
+    top: 69%
+}
+
+.nav-links li:nth-child(6):hover ~ .active {
+    top: 85.6%
+}
+
+.admin-area {
+    margin-left: 275px;
+    padding: 10px;
+    
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 10px;
+    
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    margin-right: 20px;
+    padding: 8px;
+}
+
+th {
+    background-color: #0d74f5;
+    color: #fff;
+}
+
+tr:nth-child(even) {
+    background-color: #fff;
+}
+
+.admin-area h2 {
+    margin-bottom: 10px;
+}
+
+.add-question, .add-user, .add-topic, .add-subtopic, .update-subtopic  {
+    background-color: #0d74f5;;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 300px;
+    align-items: center;
+}
+
+.note p{
+    color: blue;
+    font-size: 8px;
+}
+
+.edit, .delete {
+    background-color: #0d74f5;;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100px;
+    align-items: center;
+}
+
+.add-question, .add-user, .add-topic, .add-subtopic {
+    margin-top: 50px;
+    margin-left: 180px;
+
+}
+
+.dashboard-tr1, .dashboard-tr1, .dashboard-td1, .dashboard-td2, .dashboard-td3, .dashboard-td4  {
+    border: 0;
+}
+
+input[type="text"], input[type="email"], input[type="password"], .add-edit-topics-input select, .add-edit-question-input select {
+    padding: 15px;
+    margin-bottom: 10px;    
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    width: 50%;
+    font-family: 'Poppins', sans-serif;
+    color: #2C3E50;
+    font-size: 13px;
+    height: 50px;
+    align-items: center;
+
+}
+
+.add-topic-link p {
+    align-items: center;
+}
+

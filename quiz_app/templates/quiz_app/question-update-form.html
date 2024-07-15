@@ -1,0 +1,39 @@
+{% extends 'base-admin.html' %}
+
+{% block content %}
+
+<div class="admin-area">
+    <h2>Add/Edit - Question</h2>
+
+    <form method="post" action="http://127.0.0.1:8000/question-update/{{update_question.question_id}}/">
+    
+        {% csrf_token %}
+        <div class="add-edit-topics-input">
+            <input type="text" name="question" value="{{update_question.question}}"><p>
+            <input type="text" name="option 1" value={{update_question.option1}}> [choice 1]<p>
+            <input type="text" name="option 2" value={{update_question.option2}}> [choice 2]<p>
+            <input type="text" name="option 3" value={{update_question.option3}}> [choice 3]<p>
+            <input type="text" name="option 4" value={{update_question.option4}}> [choice 4]<p>
+            <input type="text" name="answer" value={{update_question.answer}}> [answer]<p>
+            <select class ="select" name="subtopic"><p>
+                    {% for sub in subtopics %}
+                        <option value={{sub.sub_topic_id}} >{{sub.sub_topic }}</option>
+                    {% endfor %}
+            </select>
+            
+            <p><button type="submit" class="add-question">Update Question</button></div>
+        </div>
+
+    </form> 
+</div>
+
+{% endblock content %}
+
+
+
+
+<select class ="select" name="topic">
+    {% for t in topics %}
+    <option value={{t.topic_id}} >{{ t.topic }}</option>
+    {% endfor %}
+</select>
